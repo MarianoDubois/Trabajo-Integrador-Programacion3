@@ -1,7 +1,7 @@
 -- Active: 1654168274613@@127.0.0.1@3306
-CREATE DATABASE if not exists pedidosashe;
+CREATE DATABASE if not exists Pedidos;
 
-use pedidosashe;
+use Pedidos;
 
 
 create table Estados_Venta(
@@ -81,14 +81,3 @@ create table Ventas(
 
 
 
-
-
-
-
-
-
-
-
-
-
-    
