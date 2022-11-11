@@ -1,7 +1,7 @@
 -- Active: 1654168274613@@127.0.0.1@3306
-CREATE DATABASE if not exists PedidosC;
+CREATE DATABASE if not exists Pedidos;
 
-use PedidosC;
+use Pedidos;
 
 
 create table Estados_Venta(
@@ -113,17 +113,3 @@ insert into Ventas (id, id_detalle, id_proveedor, id_estado, fecha_solicitud, fe
 values (1, 1, 1, 1, "2022-11-17", "2022-11-17", "Av. Fuerza Aerea");
 insert into Ventas (id, id_detalle, id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
 values (2, 2, 2, 2, "2022-11-23", "2022-11-23", "La Estanzuela");
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
