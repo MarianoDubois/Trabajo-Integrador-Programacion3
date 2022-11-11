@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'pedidos1.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'pedidos',
+    'NAME': '',
     'USER': 'bdi',
     'PASSWORD': 'pepe1234',
     'HOST': '127.0.0.1',
