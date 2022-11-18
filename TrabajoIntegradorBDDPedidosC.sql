@@ -4,12 +4,11 @@ CREATE DATABASE if not exists Pedidos;
 use Pedidos;
 
 
-create table Estados_Venta(
+create table Estados_Venta(    
     id int not null AUTO_INCREMENT PRIMARY KEY,
     nombre varchar(30),
     descripcion varchar(30)
 );
-
 insert into Estados_Venta (nombre, descripcion) values ("Entregado", "El pedido a sido entregado");
 insert into Estados_Venta (nombre, descripcion) values ("Pendiente", "Su pedido esta en espera");
 insert into Estados_Venta (nombre, descripcion) values ("Confirmado", "Su pedido esta en proceso");
@@ -51,12 +50,9 @@ create table Proveedores(
     constraint foreign key (id_localidad) references Localidades (id)
 );
 
-insert into Proveedores (cuit, razon_social, id_condicion_iva, id_localidad, calle, numero, departamento,
-piso, telefono, fax) values (20-37858374-6, "ByC", 0, 0, "San Martin", 1226, "-" , "-", 3518659932, 313414515);
-insert into Proveedores (cuit, razon_social, id_condicion_iva, id_localidad, calle, numero, departamento,
-piso, telefono, fax) values (20-38538934-5, "Walmart", 1, 1, "Av. Colón", 6051, "-" , "-", 3515386642, 313473892);
-insert into Proveedores (cuit, razon_social, id_condicion_iva, id_localidad, calle, numero, departamento,
-piso, telefono, fax) values (20-65875375-3, "Pepsico", 2, 2, "Xavi", 777, "-" , "-", 3518290023, 313492402);
+insert into Proveedores (cuit, razon_social, id_condicion_iva, id_localidad, calle, numero, telefono, fax) values (20-37858374-6, "ByC", 1, 1, "San Martin", 1226, 3518659932, 313414515);
+insert into Proveedores (cuit, razon_social, id_condicion_iva, id_localidad, calle, numero, telefono, fax) values (20-38538934-5, "Walmart", 2, 2, "Av. Colón", 6051, 3515386642, 313473892);
+insert into Proveedores (cuit, razon_social, id_condicion_iva, id_localidad, calle, numero, telefono, fax) values (20-65875375-3, "Pepsico", 3, 3, "Xavi", 777, 3518290023, 313492402);
 
 
 create table Unidad_Medida(
@@ -73,14 +69,14 @@ create table Productos(
     id int not null AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(30),
     stock int,
-    precio_unidad BIGINT,
+    precio_unidad decimal(11,2),
     id_unidad_medida int,
     constraint foreign key (id_unidad_medida) references Unidad_Medida (id)
 );
 
-insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Mayonesa", 120, $176.00, 0);
-insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Savora", 60, $350.00, 1);
-insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Pepsi", 300, $418.00, 2);
+insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Mayonesa", 120, 176.00, 1);
+insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Savora", 60, 350.00, 2);
+insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Pepsi", 300, 418.00, 3);
 
 
 create table Detalles(
@@ -90,9 +86,9 @@ create table Detalles(
     constraint foreign key (id_producto) references Productos (id)
 );
 
-insert into Detalles (id_producto, cantidad) values (0, 50);
-insert into Detalles (id_producto, cantidad) values (1, 23);
-insert into Detalles (id_producto, cantidad) values (2, 225);
+insert into Detalles (id_producto, cantidad) values (1, 50);
+insert into Detalles (id_producto, cantidad) values (2, 23);
+insert into Detalles (id_producto, cantidad) values (3, 225);
 
 create table Ventas(
     id int not null AUTO_INCREMENT PRIMARY KEY,
@@ -108,22 +104,8 @@ create table Ventas(
 );
 
 insert into Ventas (id_detalle, id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
-values (0, 0, 0, "2022-11-11", "2022-11-11", "Jose Araujo 1223");
+values (1, 1, 1, "2022-11-11", "2022-11-11", "Jose Araujo 1223");
 insert into Ventas (id_detalle, id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
-values (1, 1, 1, "2022-11-17", "2022-11-17", "Av. Fuerza Aerea");
+values (2, 2, 2, "2022-11-17", "2022-11-17", "Av. Fuerza Aerea");
 insert into Ventas (id_detalle, id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
-values (2, 2, 2, "2022-11-23", "2022-11-23", "La Estanzuela");
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+values (3, 3, 3, "2022-11-23", "2022-11-23", "La Estanzuela");
