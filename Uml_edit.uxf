@@ -7,7 +7,7 @@
       <x>28</x>
       <y>196</y>
       <w>147</w>
-      <h>133</h>
+      <h>154</h>
     </coordinates>
     <panel_attributes>Proveedores
 --
@@ -19,7 +19,9 @@
 + departamento: varchar(30)
 + piso: int
 + telefono: varchar(10)
-+ fax: varchar(30) 
++ fax: varchar(30)
++ condicion_iva: Condiciones_iva
++ localidad: Localidades 
 --</panel_attributes>
     <additional_attributes/>
   </element>
@@ -31,7 +33,7 @@
       <w>147</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>condiciones_iva
+    <panel_attributes>Condiciones_iva
 --
 + id:int
 + nombre: varchar(30)
@@ -85,10 +87,10 @@
 + fecha_solicitud: Date
 + fecha_recibido: Date
 + direccion_entrega: varchar(120)
-+ id_detalle: Detalles
-+ id_proveedor: Proveedores
-+ id_estado: Estados_venta
++ proveedor: Proveedores
++ estado: Estados_venta
 --
+- detalle()
 - calcular_total()</panel_attributes>
     <additional_attributes/>
   </element>
@@ -104,7 +106,8 @@
 --
 + id: int
 + cantidad: int
-+ id_productos: Productos
++ producto: Productos
++ venta: Ventas
 --
 - calcular_subtotal()</panel_attributes>
     <additional_attributes/>
@@ -113,7 +116,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>686</x>
-      <y>357</y>
+      <y>336</y>
       <w>147</w>
       <h>147</h>
     </coordinates>
@@ -139,7 +142,7 @@
       <x>658</x>
       <y>196</y>
       <w>196</w>
-      <h>126</h>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Productos
 --
@@ -148,7 +151,7 @@
 + descripcion: varchar(120)
 + precio_unidad: int
 + stock: int
-+ id_unidad_medida: Unidad_medida
++ unidad_medida: Unidad_medida
 --
 - actualizar_stock()</panel_attributes>
     <additional_attributes/>
@@ -170,13 +173,13 @@ m1=1
     <id>Relation</id>
     <coordinates>
       <x>91</x>
-      <y>322</y>
+      <y>343</y>
       <w>21</w>
-      <h>77</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -231,13 +234,13 @@ m1=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>756</x>
-      <y>315</y>
+      <y>301</y>
       <w>21</w>
-      <h>56</h>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
