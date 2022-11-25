@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>28</x>
+      <y>196</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Proveedores
+--
++ id: int
++ cuit: int
++ razon_social: varchar(30)
++ calle: varchar(30)
++ numero: int
++ departamento: varchar(30)
++ piso: int
++ telefono: varchar(10)
++ fax: varchar(30) 
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>28</x>
+      <y>91</y>
+      <w>147</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>condiciones_iva
+--
++ id:int
++ nombre: varchar(30)
++ descripcion: varchar(120)
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>28</x>
+      <y>385</y>
+      <w>147</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Localidades
+--
++ id: int
++ nombre: varchar(30)
++ descripcion: varchar(120)
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>245</x>
+      <y>91</y>
+      <w>147</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Estados_venta
+--
++ id: int
++ nombre: varchar(30)
++ descripcion: varchar(120)
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>231</x>
+      <y>196</y>
+      <w>175</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Ventas
+--
++ id: int
++ fecha_solicitud: Date
++ fecha_recibido: Date
++ direccion_entrega: varchar(120)
++ id_detalle: Detalles
++ id_proveedor: Proveedores
++ id_estado: Estados_venta
+--
+- calcular_total()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>462</x>
+      <y>196</y>
+      <w>147</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>Detalles
+--
++ id: int
++ cantidad: int
++ id_productos: Productos
+--
+- calcular_subtotal()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>357</y>
+      <w>147</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>Unidad_medida
+--
++ id: int
++ nombre: varchar(30)
++ descripcion: varchar(120)
+--
+- new()
+- delete()
+- set_id()
+- get_id()
+- set_nombre()
+- get_nombre()
+- set_descripcion()
+- get_descripcion()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>658</x>
+      <y>196</y>
+      <w>196</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Productos
+--
++ id int
++ nombre: varchar(30)
++ descripcion: varchar(120)
++ precio_unidad: int
++ stock: int
++ id_unidad_medida: Unidad_medida
+--
+- actualizar_stock()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>91</x>
+      <y>147</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>91</x>
+      <y>322</y>
+      <w>21</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>217</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>147</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= 1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>399</x>
+      <y>217</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>217</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>315</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>574</x>
+      <y>84</y>
+      <w>196</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Los metodos de seteo se definen en la clase Unidad_medida y son extensivos a las demas clases del diagrama</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
