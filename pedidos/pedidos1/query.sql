@@ -77,34 +77,33 @@ insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("
 insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Savora", 60, 350.00, 2);
 insert into Productos (nombre, stock, precio_unidad, id_unidad_medida) values ("Pepsi", 300, 418.00, 3);
 
-
-create table Detalles(
-    id int not NULL AUTO_INCREMENT primary key,
-    id_producto int,
-    cantidad BIGINT,
-    constraint foreign key (id_producto) references Productos (id)
-);
-
-insert into Detalles (id_producto, cantidad) values (1, 50);
-insert into Detalles (id_producto, cantidad) values (2, 23);
-insert into Detalles (id_producto, cantidad) values (3, 225);
-
 create table Ventas(
     id int not null AUTO_INCREMENT PRIMARY KEY,
-    id_detalle int,
     id_proveedor int,
     id_estado int,
     fecha_solicitud DATETIME,
     fecha_recibido DATETIME,
     direccion_entrega VARCHAR(30),
-    constraint foreign key (id_detalle) references Detalles (id),
     constraint foreign key (id_proveedor) references Proveedores (id),
     constraint foreign key (id_estado) references Estados_Venta (id)
 );
 
-insert into Ventas (id_detalle, id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
-values (1, 1, 1, "2022-11-11", "2022-11-11", "Jose Araujo 1223");
-insert into Ventas (id_detalle, id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
-values (2, 2, 2, "2022-11-17", "2022-11-17", "Av. Fuerza Aerea");
-insert into Ventas (id_detalle, id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
-values (3, 3, 3, "2022-11-23", "2022-11-23", "La Estanzuela");
+insert into Ventas (id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
+values (1, 1, "2022-11-11", "2022-11-11", "Jose Araujo 1223");
+insert into Ventas (id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
+values (2, 2, "2022-11-17", "2022-11-17", "Av. Fuerza Aerea");
+insert into Ventas (id_proveedor, id_estado, fecha_solicitud, fecha_recibido, direccion_entrega)
+values (3, 3, "2022-11-23", "2022-11-23", "La Estanzuela");
+
+create table Detalles(
+    id int not NULL AUTO_INCREMENT primary key,
+    id_producto int,
+    id_venta int,
+    cantidad BIGINT,
+    constraint foreign key (id_producto) references Productos (id),
+    constraint foreign key (id_venta) references Ventas (id)
+);
+
+insert into Detalles (id_producto, id_venta, cantidad) values (1, 1, 50);
+insert into Detalles (id_producto, id_venta, cantidad) values (2, 2, 23);
+insert into Detalles (id_producto, id_venta, cantidad) values (3, 3, 225);
