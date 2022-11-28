@@ -1,5 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 # Create your views here.
 def home_screen_view(request):
     return render(request,'index.html')
+    
+def products(request):
+    return render(request,'products.html')
+
+def DetalleProducto(request):
+    return render(request,'product-detail.html')
