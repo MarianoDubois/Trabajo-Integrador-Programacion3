@@ -19,6 +19,7 @@ class CondicionesIva(models.Model):
 
 class Detalles(models.Model):
     id_producto = models.ForeignKey('Productos', models.DO_NOTHING, db_column='id_producto', blank=True, null=True)
+    id_venta = models.ForeignKey('Ventas', models.DO_NOTHING, db_column='id_venta', blank=True, null=True)
     cantidad = models.BigIntegerField(blank=True, null=True)
 
     class Meta:
@@ -82,7 +83,6 @@ class UnidadMedida(models.Model):
 
 
 class Ventas(models.Model):
-    id_detalle = models.ForeignKey(Detalles, models.DO_NOTHING, db_column='id_detalle', blank=True, null=True)
     id_proveedor = models.ForeignKey(Proveedores, models.DO_NOTHING, db_column='id_proveedor', blank=True, null=True)
     id_estado = models.ForeignKey(EstadosVenta, models.DO_NOTHING, db_column='id_estado', blank=True, null=True)
     fecha_solicitud = models.DateTimeField(blank=True, null=True)
