@@ -17,11 +17,16 @@ from django.contrib import admin
 from django.urls import path
 from confApp.views import(
     home_screen_view,
-    products
+    products,
+    DetalleProducto
 )
+
+
 urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('',home_screen_view, name='home'),
-    path('products/',products,name='productos')
+    path('products/',products,name='productos'),
+    path('DetalleProducto/',DetalleProducto,name='DetalleDeProductos')
+
 ]

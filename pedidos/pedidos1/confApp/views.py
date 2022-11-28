@@ -6,3 +6,6 @@ def home_screen_view(request):
     
 def products(request):
     return render(request,'products.html')
+
+def DetalleProducto(request):
+    return render(request,'product-detail.html')
