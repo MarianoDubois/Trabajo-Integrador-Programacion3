@@ -9,3 +9,6 @@ def products(request):
 
 def DetalleProducto(request):
     return render(request,'product-detail.html')
+
+def DetalleProducto2(request):
+    return render(request,'product-detail2.html')

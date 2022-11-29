@@ -18,7 +18,8 @@ from django.urls import path
 from confApp.views import(
     home_screen_view,
     products,
-    DetalleProducto
+    DetalleProducto,
+    DetalleProducto2
 )
 
 
@@ -27,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_screen_view, name='home'),
     path('products/',products,name='productos'),
-    path('DetalleProducto/',DetalleProducto,name='DetalleDeProductos')
+    path('DetalleProducto/',DetalleProducto,name='DetalleDeProductos'),
+    path('DetalleProducto2/',DetalleProducto2,name='DetalleDeProducto2' )
 
 ]
