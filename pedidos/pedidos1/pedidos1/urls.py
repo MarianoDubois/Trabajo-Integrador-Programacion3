@@ -19,7 +19,10 @@ from confApp.views import(
     home_screen_view,
     products,
     DetalleProducto,
-    DetalleProducto2
+    DetalleProducto2,
+    Inicio,
+    Iniciar_sesion
+
 )
 
 
@@ -29,6 +32,7 @@ urlpatterns = [
     path('',home_screen_view, name='home'),
     path('products/',products,name='productos'),
     path('DetalleProducto/',DetalleProducto,name='DetalleDeProductos'),
-    path('DetalleProducto2/',DetalleProducto2,name='DetalleDeProducto2' )
-
+    path('DetalleProducto2/',DetalleProducto2,name='DetalleDeProducto2' ),
+    path('Inicio/',Inicio,name='Inicio1'),
+    path('iniciarsesion/',Iniciar_sesion,name='InicioSesion')
 ]

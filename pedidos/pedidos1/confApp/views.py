@@ -12,3 +12,9 @@ def DetalleProducto(request):
 
 def DetalleProducto2(request):
     return render(request,'product-detail2.html')
+
+def Inicio(request):
+    return render(request,'Inicio.html')
+
+def Iniciar_sesion(request):
+    return render(request,'Sign-in.html')
