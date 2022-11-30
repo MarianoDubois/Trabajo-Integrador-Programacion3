@@ -21,7 +21,9 @@ from confApp.views import(
     DetalleProducto,
     DetalleProducto2,
     Inicio,
-    Iniciar_sesion
+    Iniciar_sesion,
+    Registrarse,
+    Inicio_proveedores
 
 )
 
@@ -29,10 +31,12 @@ from confApp.views import(
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    path('',home_screen_view, name='home'),
+    path('home/',home_screen_view, name='home'),
     path('products/',products,name='productos'),
     path('DetalleProducto/',DetalleProducto,name='DetalleDeProductos'),
     path('DetalleProducto2/',DetalleProducto2,name='DetalleDeProducto2' ),
-    path('Inicio/',Inicio,name='Inicio1'),
-    path('iniciarsesion/',Iniciar_sesion,name='InicioSesion')
+    path('',Inicio,name='Inicio1'),
+    path('iniciarsesion/',Iniciar_sesion,name='InicioSesion'),
+    path('Registrarse/',Registrarse,name='Registro'),
+    path('IncioProveedores/',Inicio_proveedores,name='InicioProveedores')
 ]

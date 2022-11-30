@@ -18,3 +18,9 @@ def Inicio(request):
 
 def Iniciar_sesion(request):
     return render(request,'sign-in.html')
+
+def Registrarse(request):
+    return render (request,'sign-up.html')
+
+def Inicio_proveedores(request):
+    return render (request, 'sign-in-proveedores.html')
