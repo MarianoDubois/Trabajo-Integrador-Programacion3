@@ -23,8 +23,8 @@ from confApp.views import(
     Inicio,
     Iniciar_sesion,
     Registrarse,
-    Inicio_proveedores
-
+    Inicio_proveedores,
+    Registrarse_proveedores
 )
 
 
@@ -38,5 +38,6 @@ urlpatterns = [
     path('',Inicio,name='Inicio1'),
     path('iniciarsesion/',Iniciar_sesion,name='InicioSesion'),
     path('Registrarse/',Registrarse,name='Registro'),
-    path('IncioProveedores/',Inicio_proveedores,name='InicioProveedores')
+    path('IncioProveedores/',Inicio_proveedores,name='InicioProveedores'),
+    path('Registro_proveedores',Registrarse_proveedores,name='Registro_proveedores')
 ]

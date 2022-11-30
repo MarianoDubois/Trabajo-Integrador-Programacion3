@@ -24,3 +24,6 @@ def Registrarse(request):
 
 def Inicio_proveedores(request):
     return render (request, 'sign-in-proveedores.html')
+
+def Registrarse_proveedores(request):
+    return render (request, 'sign-up-proveedores.html')
