@@ -1,5 +1,5 @@
 from django.contrib import admin
-<<<<<<< Updated upstream
+
 from .models import *
 
 admin.site.register(CondicionesIva)
@@ -11,6 +11,6 @@ admin.site.register(Proveedores)
 admin.site.register(UnidadMedida)
 admin.site.register(Ventas)
 
-#sdsfsfssfj
-=======
->>>>>>> Stashed changes
+
+
+

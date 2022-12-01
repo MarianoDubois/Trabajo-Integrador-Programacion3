@@ -1,5 +1,5 @@
 
-<<<<<<< Updated upstream
+
 
 class CondicionesIva(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
@@ -94,6 +94,4 @@ class Ventas(models.Model):
         db_table = 'Ventas'
         verbose_name_plural = "Ventas"
 
-#sdfsfsdfsj
-=======
->>>>>>> Stashed changes
+
