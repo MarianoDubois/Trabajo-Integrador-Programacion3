@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -12,19 +12,19 @@
     <title>Pedidos</title>
 
     <!-- CSS FILES -->
-    <link rel="preconnect" href="{%static 'https://fonts.googleapis.com'%}">
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
 
-    <link rel="preconnect" href="{%static 'https://fonts.gstatic.com'%}" crossorigin>
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
 
-    <link href="{%static 'https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap'%}"
-        rel="stylesheet">
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap' %}"
+          rel="stylesheet">
 
-    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
-    <link href="{%static 'css/bootstrap-icons.css'%}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/slick.css"/>
 
-    <link href="{%static 'css/tooplate-little-fashion.css'%}" rel="stylesheet">
+    <link href="{% static 'css/tooplate-little-fashion.css' %}" rel="stylesheet">
     <!--
 
 Tooplate 2127 Little Fashion
@@ -36,130 +36,121 @@ https://www.tooplate.com/view/2127-little-fashion
 
 <body>
 
-    <section class="preloader">
-        <div class="spinner">
-            <span class="sk-inner-circle"></span>
-        </div>
-    </section>
+<section class="preloader">
+    <div class="spinner">
+        <span class="sk-inner-circle"></span>
+    </div>
+</section>
 
-    <main>
+<main>
 
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <a class="navbar-brand" href="http://127.0.0.1:8000/">
-                    <strong><span>Pedidos</span> </strong>
-                </a>
+            <a class="navbar-brand" href="http://127.0.0.1:8000/">
+                <strong><span>Pedidos</span> </strong>
+            </a>
 
-                <div class="d-lg-none">
-                    <a href="{%static 'sign-in.html'%}" class="bi-person custom-icon me-3"></a>
+            <div class="d-lg-none">
+                <a href="{% static 'sign-in.html' %}" class="bi-person custom-icon me-3"></a>
 
-                    <a href="{%static 'product-detail.html'%}" class="bi-bag custom-icon"></a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-
-
-
-
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Registro Pedido</a>
-                        </li>
-
-
-
-                    </ul>
-
-
-                </div>
-            </div>
-        </nav>
-
-        <header class="site-header section-padding d-flex justify-content-center align-items-center">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-10 col-12">
-                        <h1>
-                            <span class="d-block text-primary">Elige</span>
-                            <span class="d-block text-dark">Tu recurso</span>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <form action="{% url 'saveProducto' %}" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Nombre Encargado</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+                <a href="{% static 'product-detail.html' %}" class="bi-bag custom-icon"></a>
             </div>
 
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Elige el proveedor</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="proveedor">
-
-                    {% for p in proveedores %}
-                    <option value="{{ p.cuit }}">{{ p.razon_social }}</option>
-                    {% endfor %}
-                </select>
-                <a href="http://127.0.0.1:8000/admin/confApp/proveedores/add/?_to_field=id&_popup=1"
-                    class="btn custom-btn social-btn">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
 
 
-                    Generar nuevo proveedor
-                </a>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Elige el producto</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Registro Pedido</a>
+                    </li>
 
-                        {% for p in productos %}
-                        <option>{{ p.nombre }}</option>
-                        {% endfor %}
 
-                    </select>
+                </ul>
 
-                </div>
+
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary"
-                href="http://127.0.0.1:8000/admin/confApp/proveedores/add/?_to_field=id&_popup=1">Registrar
-                Pedido</button>
+        </div>
+    </nav>
 
-
-        </form>
-
-
-    </main>
-
-    <footer class="site-footer">
+    <header class="site-header section-padding d-flex justify-content-center align-items-center">
         <div class="container">
             <div class="row">
 
-
-
-
-
-
+                <div class="col-lg-10 col-12">
+                    <h1>
+                        <span class="d-block text-primary">Elige</span>
+                        <span class="d-block text-dark">Tu recurso</span>
+                    </h1>
+                </div>
             </div>
         </div>
-    </footer>
+    </header>
+    <form action="{% url 'saveProducto' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre Encargado</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" name="nombre">
+        </div>
 
-    <!-- JAVASCRIPT FILES -->
-    <script src="{%static 'js/jquery.min.js'%}"></script>
-    <script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
-    <script src="{%static 'js/Headroom.js'%}"></script>
-    <script src="{%static 'js/jQuery.headroom.js'%}"></script>
-    <script src="{%static 'js/slick.min.js'%}"></script>
-    <script src="{%static 'js/custom.js'%}"></script>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Elige el proveedor</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="proveedor">
+
+                {% for p in proveedores %}
+                    <option value="{{ p.id }}">{{ p.razon_social }}</option>
+                {% endfor %}
+            </select>
+            <a href="http://127.0.0.1:8000/admin/confApp/proveedores/add/?_to_field=id&_popup=1"
+               class="btn custom-btn social-btn">
+                Generar nuevo proveedor
+            </a>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Elige el producto</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="producto">
+                    {% for p in productos %}
+                        <option value="{{ p.id }}">{{ p.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Cantidad</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Cantidad"
+                       name="cantidad">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Direccion"
+                       name="direccion">
+            </div>
+            <button type="submit" class="btn btn-primary"
+                    href="http://127.0.0.1:8000/admin/confApp/proveedores/add/?_to_field=id&_popup=1">Registrar
+                Pedido
+            </button>
+        </div>
+
+    </form>
+
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT FILES -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/Headroom.js' %}"></script>
+<script src="{% static 'js/jQuery.headroom.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 
 </body>
 

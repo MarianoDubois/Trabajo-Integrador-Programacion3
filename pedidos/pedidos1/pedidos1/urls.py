@@ -13,32 +13,28 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from confApp.views import(
-    home_screen_view,
+from confApp.views import (
     products,
     DetalleProducto,
     DetalleProducto2,
     Inicio,
     Iniciar_sesion,
-    Registrarse,
     Inicio_proveedores,
-    Registrarse_proveedores,
     save_producto,
     estado_entrega
 )
-
+from django.contrib import admin
+from django.urls import path
 
 urlpatterns = [
-    
+
     path('admin/', admin.site.urls),
-    path('products/',products,name='productos'),
-    path('DetalleProducto/',DetalleProducto,name='DetalleDeProductos'),
-    path('DetalleProducto2/',DetalleProducto2,name='DetalleDeProducto2'),
-    path('',Inicio,name='Inicio1'),
-    path('iniciarsesion/',Iniciar_sesion,name='InicioSesion'),
-    path('IncioProveedores/',Inicio_proveedores,name='InicioProveedores'),
+    path('products/', products, name='productos'),
+    path('DetalleProducto/', DetalleProducto, name='DetalleDeProductos'),
+    path('DetalleProducto2/', DetalleProducto2, name='DetalleDeProducto2'),
+    path('', Inicio, name='Inicio1'),
+    path('iniciarsesion/', Iniciar_sesion, name='InicioSesion'),
+    path('IncioProveedores/', Inicio_proveedores, name='InicioProveedores'),
     path('success/', save_producto, name='saveProducto'),
-    path('estado/',estado_entrega,name='EstadoEntrega')
+    path('estado/', estado_entrega, name='EstadoEntrega')
 ]
