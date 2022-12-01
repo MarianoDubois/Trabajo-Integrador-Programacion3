@@ -18,6 +18,7 @@ class CondicionesIva(models.Model):
     class Meta:
         managed = False
         db_table = 'Condiciones_Iva'
+        verbose_name_plural = "Condiciones de Iva"
 
 
 class Detalles(models.Model):
@@ -25,9 +26,13 @@ class Detalles(models.Model):
     id_venta = models.ForeignKey('Ventas', models.DO_NOTHING, db_column='id_venta', blank=True, null=True)
     cantidad = models.BigIntegerField(blank=True, null=True)
 
+    def __str__(self):
+        return "Detalle Numero="+str(self.id)+" Subtotal="+str(self.cantidad*self.id_producto.precio_unidad)
+
     class Meta:
         managed = False
         db_table = 'Detalles'
+        verbose_name_plural = "Detalles"
 
 
 class EstadosVenta(models.Model):
@@ -40,6 +45,7 @@ class EstadosVenta(models.Model):
     class Meta:
         managed = False
         db_table = 'Estados_Venta'
+        verbose_name_plural = "Estados de la Venta"
 
 
 class Localidades(models.Model):
@@ -52,6 +58,7 @@ class Localidades(models.Model):
     class Meta:
         managed = False
         db_table = 'Localidades'
+        verbose_name_plural = "Localidades"
 
 
 class Productos(models.Model):
@@ -67,6 +74,7 @@ class Productos(models.Model):
     class Meta:
         managed = False
         db_table = 'Productos'
+        verbose_name_plural = "Productos"
 
 
 class Proveedores(models.Model):
@@ -88,6 +96,7 @@ class Proveedores(models.Model):
     class Meta:
         managed = False
         db_table = 'Proveedores'
+        verbose_name_plural = "Proveedores"
 
 
 class UnidadMedida(models.Model):
@@ -100,6 +109,7 @@ class UnidadMedida(models.Model):
     class Meta:
         managed = False
         db_table = 'Unidad_Medida'
+        verbose_name_plural = "Unidades de medida"
 
 
 class Ventas(models.Model):
@@ -109,6 +119,16 @@ class Ventas(models.Model):
     fecha_recibido = models.DateTimeField(blank=True, null=True)
     direccion_entrega = models.CharField(max_length=30, blank=True, null=True)
 
+    """def total():
+        /list_detalles = Detalles.objects.all()
+        
+
+    def __str__(self):
+        detalles = Detalles.objects.all().filter(id_venta=self.id)
+        
+        return "Venta Numero="+str(self.id)+" Total="+str(detalle)"""
+
     class Meta:
         managed = False
         db_table = 'Ventas'
+        verbose_name_plural = "Ventas"
