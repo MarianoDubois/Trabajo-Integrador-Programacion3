@@ -1,5 +1,4 @@
-
-
+from django.db import models
 
 class CondicionesIva(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
