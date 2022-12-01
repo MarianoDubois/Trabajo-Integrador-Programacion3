@@ -12,6 +12,9 @@ class CondicionesIva(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
     descripcion = models.CharField(max_length=30, blank=True, null=True)
 
+    def __str__(self):
+        return self.nombre
+
     class Meta:
         managed = False
         db_table = 'Condiciones_Iva'
@@ -31,6 +34,9 @@ class EstadosVenta(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
     descripcion = models.CharField(max_length=30, blank=True, null=True)
 
+    def __str__(self):
+        return self.nombre
+
     class Meta:
         managed = False
         db_table = 'Estados_Venta'
@@ -39,6 +45,9 @@ class EstadosVenta(models.Model):
 class Localidades(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
     descripcion = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre
 
     class Meta:
         managed = False
@@ -51,6 +60,9 @@ class Productos(models.Model):
     precio_unidad = models.DecimalField(max_digits=11, decimal_places=2, blank=True, null=True)
     id_unidad_medida = models.ForeignKey('UnidadMedida', models.DO_NOTHING, db_column='id_unidad_medida', blank=True,
                                          null=True)
+
+    def __str__(self):
+        return self.nombre
 
     class Meta:
         managed = False
@@ -70,6 +82,9 @@ class Proveedores(models.Model):
     telefono = models.BigIntegerField(blank=True, null=True)
     fax = models.CharField(max_length=30, blank=True, null=True)
 
+    def __str__(self):
+        return self.razon_social
+
     class Meta:
         managed = False
         db_table = 'Proveedores'
@@ -78,6 +93,9 @@ class Proveedores(models.Model):
 class UnidadMedida(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
     descripcion = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre
 
     class Meta:
         managed = False
