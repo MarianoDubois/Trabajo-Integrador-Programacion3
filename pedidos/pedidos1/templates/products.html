@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="css/slick.css"/>
 
-    <link href="{% static 'css/tooplate-little-fashion.css' %}" rel="stylesheet">
+    <link href="{% static 'css/css.css' %}" rel="stylesheet">
     <!--
 
 Tooplate 2127 Little Fashion
@@ -51,7 +51,7 @@ https://www.tooplate.com/view/2127-little-fashion
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <a class="navbar-brand" href="http://127.0.0.1:8000/">
+            <a class="navbar-brand" >
                 <strong><span>Pedidos</span> </strong>
             </a>
 
@@ -66,7 +66,7 @@ https://www.tooplate.com/view/2127-little-fashion
 
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Registro Pedido</a>
+                        <a class="nav-link active">Registro Pedido</a>
                     </li>
 
 
@@ -83,14 +83,14 @@ https://www.tooplate.com/view/2127-little-fashion
 
                 <div class="col-lg-10 col-12">
                     <h1>
-                        <span class="d-block text-primary">Elige</span>
-                        <span class="d-block text-dark">Tu recurso</span>
+                        <span class="d-block text-primary">Haz</span>
+                        <span class="d-block text-dark">Tu pedido</span>
                     </h1>
                 </div>
             </div>
         </div>
     </header>
-    <form action="{% url 'saveProducto' %}" method="post">
+    <form action="{% url 'saveProducto' %}" method="post" >
         {% csrf_token %}
         <div class="form-group">
             <label for="exampleFormControlInput1">Nombre Encargado</label>

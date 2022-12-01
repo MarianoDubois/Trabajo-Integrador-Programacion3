@@ -1182,3 +1182,7 @@ button:focus:not(:focus-visible) {
     }
 }
 
+.registro{
+    width: 400px;
+    background-color: #FF4400;
+}
