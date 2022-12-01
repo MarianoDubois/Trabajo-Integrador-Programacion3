@@ -1,3 +1,4 @@
+-- Active: 1654168274613@@127.0.0.1@3306@Pedidos
 CREATE DATABASE if not exists Pedidos;
 
 use Pedidos;

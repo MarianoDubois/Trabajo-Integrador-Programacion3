@@ -100,3 +100,5 @@ class Ventas(models.Model):
         managed = False
         db_table = 'Ventas'
         verbose_name_plural = "Ventas"
+
+#sdfsfsdfsj
