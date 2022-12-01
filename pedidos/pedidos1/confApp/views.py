@@ -47,6 +47,9 @@ def Registrarse_proveedores(request):
 def estado_entrega(request):
     return render(request, 'estadoentrega.html')
 
+def PedidoExitoso(request):
+    return render(request, 'PedidoExitoso.html')
+
 
 def save_producto(request):
     proveedores = Proveedores.objects.all()
@@ -61,4 +64,4 @@ def save_producto(request):
                                   fecha_recibido=None)
     Detalles.objects.create(id_producto=producto, id_venta=venta, cantidad=request.POST['cantidad'])
 
-    return render(request, "products.html")  # REDIRIGIR A PAGINA DE EXITO
+    return render(request, "PedidoExitoso.html")  # REDIRIGIR A PAGINA DE EXITO

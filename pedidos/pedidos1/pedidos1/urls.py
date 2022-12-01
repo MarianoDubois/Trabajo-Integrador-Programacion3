@@ -21,7 +21,8 @@ from confApp.views import (
     Iniciar_sesion,
     Inicio_proveedores,
     save_producto,
-    estado_entrega
+    estado_entrega,
+    PedidoExitoso
 )
 from django.contrib import admin
 from django.urls import path
@@ -36,5 +37,6 @@ urlpatterns = [
     path('iniciarsesion/', Iniciar_sesion, name='InicioSesion'),
     path('IncioProveedores/', Inicio_proveedores, name='InicioProveedores'),
     path('success/', save_producto, name='saveProducto'),
-    path('estado/', estado_entrega, name='EstadoEntrega')
+    path('estado/', estado_entrega, name='EstadoEntrega'),
+    path('PedidoExitoso/',PedidoExitoso,name='PedidoConExito')
 ]
