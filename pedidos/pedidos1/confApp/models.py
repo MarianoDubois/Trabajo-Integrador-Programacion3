@@ -51,7 +51,8 @@ class Productos(models.Model):
         managed = False
         db_table = 'Productos'
         verbose_name_plural = "Productos"
-
+    def __str__(self):
+        return self.nombre
 
 class Proveedores(models.Model):
     cuit = models.BigIntegerField(blank=True, null=True)
