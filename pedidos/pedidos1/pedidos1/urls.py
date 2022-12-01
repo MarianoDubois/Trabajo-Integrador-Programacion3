@@ -31,13 +31,11 @@ from confApp.views import(
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    path('home/',home_screen_view, name='home'),
     path('products/',products,name='productos'),
     path('DetalleProducto/',DetalleProducto,name='DetalleDeProductos'),
-    path('DetalleProducto2/',DetalleProducto2,name='DetalleDeProducto2' ),
+    path('DetalleProducto2/',DetalleProducto2,name='DetalleDeProducto2'),
     path('',Inicio,name='Inicio1'),
     path('iniciarsesion/',Iniciar_sesion,name='InicioSesion'),
-    path('Registrarse/',Registrarse,name='Registro'),
-    path('IncioProveedores/',Inicio_proveedores,name='InicioProveedores'),
-    path('Registro_proveedores',Registrarse_proveedores,name='Registro_proveedores')
+    path('IncioProveedores/',Inicio_proveedores,name='InicioProveedores')
+    
 ]
