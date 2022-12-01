@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 -- Active: 1654168274613@@127.0.0.1@3306@Pedidos
+=======
+-- Active: 1653564627884@@127.0.0.1@3306@Pedidos
+>>>>>>> Stashed changes
 CREATE DATABASE if not exists Pedidos;
 
 use Pedidos;
