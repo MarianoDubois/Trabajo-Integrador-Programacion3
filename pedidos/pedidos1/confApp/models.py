@@ -26,8 +26,12 @@ class Detalles(models.Model):
     id_venta = models.ForeignKey('Ventas', models.DO_NOTHING, db_column='id_venta', blank=True, null=True)
     cantidad = models.BigIntegerField(blank=True, null=True)
 
+    def subtotal(self):
+        subtotal = (self.id_producto.precio_unidad*self.cantidad)
+        return subtotal
+    
     def __str__(self):
-        return "Detalle Numero="+str(self.id)+" Subtotal="+str(self.cantidad*self.id_producto.precio_unidad)
+        return "Detalle Numero("+str(self.id)+") Subtotal("+str(self.subtotal())+"$)"
 
     class Meta:
         managed = False
@@ -119,14 +123,18 @@ class Ventas(models.Model):
     fecha_recibido = models.DateTimeField(blank=True, null=True)
     direccion_entrega = models.CharField(max_length=30, blank=True, null=True)
 
-    """def total():
-        /list_detalles = Detalles.objects.all()
-        
+    def calcular_total(self):
+        list_detalles = Detalles.objects.all().filter(id_venta=self.id)
+        suma = 0
+        for detalle in list_detalles:
+            precio = detalle.id_producto.precio_unidad
+            cantidad = detalle.cantidad
+            suma = suma+(precio*cantidad)
+        return suma
+
 
     def __str__(self):
-        detalles = Detalles.objects.all().filter(id_venta=self.id)
-        
-        return "Venta Numero="+str(self.id)+" Total="+str(detalle)"""
+        return "Venta Numero("+str(self.id)+") Total("+str(self.calcular_total())+"$)"
 
     class Meta:
         managed = False
