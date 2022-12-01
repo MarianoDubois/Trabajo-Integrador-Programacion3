@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'confApp'
 ]
+
+JAZZMIN_SETTINGS = {
+    "site_title": "PEDIDOS",
+    "site_header": "aaaaaaaaaaAAAAAAA",
+    "site_brand": "Pedidos",
+    "welcome_sign": "Bienvenido a Pedidos",
+    "copyright": "PEDIDOS",
+    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -15,6 +15,7 @@ class CondicionesIva(models.Model):
     class Meta:
         managed = False
         db_table = 'Condiciones_Iva'
+        verbose_name_plural = "Condiciones Iva"
 
 
 class Detalles(models.Model):
@@ -25,6 +26,7 @@ class Detalles(models.Model):
     class Meta:
         managed = False
         db_table = 'Detalles'
+        verbose_name_plural = "Detalles"
 
 
 class EstadosVenta(models.Model):
@@ -34,6 +36,7 @@ class EstadosVenta(models.Model):
     class Meta:
         managed = False
         db_table = 'Estados_Venta'
+        verbose_name_plural = "Estados Venta"
 
 
 class Localidades(models.Model):
@@ -43,6 +46,7 @@ class Localidades(models.Model):
     class Meta:
         managed = False
         db_table = 'Localidades'
+        verbose_name_plural = "Localidades"
 
 
 class Productos(models.Model):
@@ -54,6 +58,7 @@ class Productos(models.Model):
     class Meta:
         managed = False
         db_table = 'Productos'
+        verbose_name_plural = "Productos"
 
 
 class Proveedores(models.Model):
@@ -71,6 +76,7 @@ class Proveedores(models.Model):
     class Meta:
         managed = False
         db_table = 'Proveedores'
+        verbose_name_plural = "Proveedores"
 
 
 class UnidadMedida(models.Model):
@@ -80,6 +86,7 @@ class UnidadMedida(models.Model):
     class Meta:
         managed = False
         db_table = 'Unidad_Medida'
+        verbose_name_plural = "Unidad Medida"
 
 
 class Ventas(models.Model):
@@ -92,3 +99,4 @@ class Ventas(models.Model):
     class Meta:
         managed = False
         db_table = 'Ventas'
+        verbose_name_plural = "Ventas"
