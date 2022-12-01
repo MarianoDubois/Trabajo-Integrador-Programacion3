@@ -1,3 +1,4 @@
+{% load static%}
 <!doctype html>
 <html lang="en">
     <head>
@@ -16,12 +17,12 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
+        <link href="{%static 'css/bootstrap-icons.css'%}" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/slick.css"/>
+        <link rel="stylesheet" href="{%static 'css/slick.css'%}"/>
 
-        <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+        <link href="{%static 'css/tooplate-little-fashion.css'%}" rel="stylesheet">
         
 <!--
 
@@ -50,22 +51,8 @@ https://www.tooplate.com/view/2127-little-fashion
 
                             <h1 class="hero-title text-center mb-5">Sign Up</h1>
 
-                            <div class="social-login d-flex flex-column w-50 m-auto">
-                                
-                                <a href="#" class="btn custom-btn social-btn mb-4">
-                                    <i class="bi bi-google me-3"></i>
 
-                                    Continue with Google
-                                </a>
-
-                                <a href="#" class="btn custom-btn social-btn">
-                                    <i class="bi bi-facebook me-3"></i>
-
-                                    Continue with Facebook
-                                </a>
-                            </div>
-
-                            <div class="div-separator w-50 m-auto my-5"><span>or</span></div>
+                           
 
                             <div class="row">
                                 <div class="col-lg-8 col-11 mx-auto">
@@ -76,6 +63,7 @@ https://www.tooplate.com/view/2127-little-fashion
 
                                             <label for="email">Email address</label>
                                         </div>
+                                        
 
                                         <div class="form-floating my-4">
                                             <input type="password" name="password" id="password" pattern="[0-9a-zA-Z]{4,10}" class="form-control" placeholder="Password" required>
@@ -111,57 +99,21 @@ https://www.tooplate.com/view/2127-little-fashion
 
         <footer class="site-footer">
             <div class="container">
-                <div class="row">
+              
+                
 
-                    <div class="col-lg-3 col-10 me-auto mb-4">
-                        <h4 class="text-white mb-3"><a href="index.html">Little</a> Fashion</h4>
-                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2022 <strong>Little Fashion</strong></p>
-                        <br>
-                        <p class="copyright-text">Designed by <a href="https://www.tooplate.com/" target="_blank">Tooplate</a></p>
-                    </div>
 
-                    <div class="col-lg-5 col-8">
-                        <h5 class="text-white mb-3">Sitemap</h5>
-
-                        <ul class="footer-menu d-flex flex-wrap">
-                            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <h5 class="text-white mb-3">Social</h5>
-
-                        <ul class="social-icon">
-
-                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-skype"></a></li>
-                        </ul>
-                    </div>
-
-                </div>
+                    
             </div>
         </footer>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/Headroom.js"></script>
-        <script src="js/jQuery.headroom.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="{%static 'js/jquery.min.js'%}"></script>
+        <script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{%static 'js/Headroom.js'%}"></script>
+        <script src="{%static 'js/jQuery.headroom.js'%}"></script>
+        <script src="{%static 'js/slick.min.js'%}"></script>
+        <script src="{%static 'js/custom.js'%}"></script>
 
     </body>
 </html>

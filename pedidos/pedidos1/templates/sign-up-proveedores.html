@@ -1,5 +1,4 @@
 {% load static%}
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -9,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Tooplate's Little Fashion - Sign In Page</title>
+        <title>Tooplate's Little Fashion - Sign Up Page</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,29 +49,50 @@ https://www.tooplate.com/view/2127-little-fashion
 
                         <div class="col-lg-8 mx-auto col-12">
 
-                            <h1 class="hero-title text-center mb-5">Sign In</h1>
+                            <h1 class="hero-title text-center mb-5">Sign Up</h1>
+
+
+                           
 
                             <div class="row">
                                 <div class="col-lg-8 col-11 mx-auto">
                                     <form role="form" method="post">
 
-                                        <div class="form-floating mb-4 p-0">
+                                        <div class="form-floating">
                                             <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
 
                                             <label for="email">Email address</label>
                                         </div>
+                                        <div class="form-floating">
+                                            <input type="text" name="email" id="email"  class="form-control" placeholder="Nombre" required>
 
-                                        <div class="form-floating p-0">
-                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                                            <label for="email">Nombre</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="text" name="email" id="email"  class="form-control" placeholder="Razon Social" required>
+
+                                            <label for="email">Razon Social</label>
+                                        </div>
+
+                                        <div class="form-floating my-4">
+                                            <input type="password" name="password" id="password" pattern="[0-9a-zA-Z]{4,10}" class="form-control" placeholder="Password" required>
 
                                             <label for="password">Password</label>
+                                            
+                                            <p class="text-center">* shall include 0-9 a-z A-Z in 4 to 10 characters</p>
+                                        </div>
+
+                                        <div class="form-floating">
+                                            <input type="password" name="confirm_password" id="confirm_password" pattern="[0-9a-zA-Z]{4,10}" class="form-control" placeholder="Password" required>
+
+                                            <label for="confirm_password">Password Confirmation</label>
                                         </div>
 
                                         <button type="submit" class="btn custom-btn form-control mt-4 mb-3">
-                                            Sign in
+                                            Create account
                                         </button>
 
-                                        <p class="text-center">Don’t have an account? <a href="http://127.0.0.1:8000/Registrarse">Create One</a></p>
+                                        <p class="text-center">Already have an account? Please <a href="http://127.0.0.1:8000/IncioProveedores">Sign In</a></p>
 
                                     </form>
                                 </div>
@@ -88,7 +108,11 @@ https://www.tooplate.com/view/2127-little-fashion
 
         <footer class="site-footer">
             <div class="container">
-               
+              
+                
+
+
+                    
             </div>
         </footer>
 
