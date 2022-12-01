@@ -30,3 +30,15 @@ def Inicio_proveedores(request):
 
 def Registrarse_proveedores(request):
     return render (request, 'sign-up-proveedores.html')
+
+def estado_entrega(request):
+    return render(request, 'estadoentrega.html' )
+
+def save_producto(request):
+
+    print(f"---{request.POST}---")
+
+    """proveedores = Proveedores.objects.all()
+    proveedor = proveedores[int(request.POST['proveedor'])]
+    venta = Ventas.objects.create()"""
+    return render(request, "products.html")
