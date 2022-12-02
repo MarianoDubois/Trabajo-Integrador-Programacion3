@@ -31,7 +31,7 @@ class Detalles(models.Model):
         return subtotal
     
     def __str__(self):
-        return "Detalle Numero("+str(self.id)+") Subtotal("+str(self.subtotal())+"$)"
+        return f"Detalle Numero({str(self.id)}) Subtotal({str(self.subtotal())})+$)"
 
     class Meta:
         managed = False
@@ -69,9 +69,13 @@ class Productos(models.Model):
     nombre = models.CharField(max_length=30, blank=True, null=True)
     stock = models.IntegerField(blank=True, null=True)
     precio_unidad = models.DecimalField(max_digits=11, decimal_places=2, blank=True, null=True)
-    id_unidad_medida = models.ForeignKey('UnidadMedida', models.DO_NOTHING, db_column='id_unidad_medida', blank=True,
-                                         null=True)
-
+    id_unidad_medida = models.ForeignKey('UnidadMedida', models.DO_NOTHING, db_column='id_unidad_medida', blank=True,null=True)
+    
+    def restock(self, nuevo_stock):
+        producto = Productos.objects.get(id=self.id)
+        producto.stock = producto.stock+nuevo_stock
+        producto.save()
+    
     def __str__(self):
         return self.nombre
 
@@ -123,7 +127,15 @@ class Ventas(models.Model):
     fecha_recibido = models.DateTimeField(blank=True, null=True)
     direccion_entrega = models.CharField(max_length=30, blank=True, null=True)
 
-    def calcular_total(self):
+    def stockFinder(self):
+        if self.id_estado == 1:
+            detalles = Detalles.objects.all().filter(id_venta=self.id)
+            for detalle in detalles:
+                producto = detalle.id_producto
+                cantidad = detalle.cantidad
+                Productos.restock(producto, cantidad)
+    
+    def total(self):
         list_detalles = Detalles.objects.all().filter(id_venta=self.id)
         suma = 0
         for detalle in list_detalles:
@@ -134,7 +146,7 @@ class Ventas(models.Model):
 
 
     def __str__(self):
-        return "Venta Numero("+str(self.id)+") Total("+str(self.calcular_total())+"$)"
+        return f"Venta Numero({str(self.id)}) Total(+{str(self.total())}$)"
 
     class Meta:
         managed = False
