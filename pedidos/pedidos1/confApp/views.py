@@ -47,7 +47,7 @@ def Registrarse_proveedores(request):
 def estado_entrega(request):
     ventas = Ventas.objects.all()
     estados = EstadosVenta.objects.all()
-    return render(request, 'estadoentrega.html')
+    return render(request, 'estadoentrega.html', context={'ventas': ventas, 'estados': estados})
 
 def PedidoExitoso(request):
     return render(request, 'PedidoExitoso.html')
@@ -70,11 +70,11 @@ def save_producto(request):
 
 def cambiar_estado(request):
     ventas = Ventas.objects.all()
-    venta = ventas[int(request.POST['venta']) - 1]
+    venta = ventas[int(request.POST['venta']) -1]
 
     estados = EstadosVenta.objects.all()
-    estado = estados[int(request.POST['estado']) - 1]
+    estado = estados[int(request.POST['estado']) -1]
     
-    Ventas.set_estado(venta, estado)
+    Ventas.set_estado(venta, estado) 
 
     return render(request, "PedidoExistoso.html")

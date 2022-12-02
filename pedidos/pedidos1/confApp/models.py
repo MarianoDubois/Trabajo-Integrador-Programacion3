@@ -31,7 +31,7 @@ class Detalles(models.Model):
         return subtotal
     
     def __str__(self):
-        return f"Detalle Numero({str(self.id)}) Subtotal({str(self.subtotal())})+$)"
+        return f"Detalle Numero({str(self.id)}) Subtotal({str(self.subtotal())}$)"
 
     class Meta:
         managed = False
