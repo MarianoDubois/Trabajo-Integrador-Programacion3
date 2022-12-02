@@ -11,6 +11,7 @@ from confApp.views import (
     Inicio_proveedores,
     save_producto,
     estado_entrega,
+    cambiar_estado,
     PedidoExitoso
 )
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('iniciarsesion/', Iniciar_sesion, name='InicioSesion'),
     path('IncioProveedores/', Inicio_proveedores, name='InicioProveedores'),
     path('success/', save_producto, name='saveProducto'),
+    path('PedidoExitoso/',PedidoExitoso,name='PedidoConExito'),
     path('estado/', estado_entrega, name='EstadoEntrega'),
-    path('PedidoExitoso/',PedidoExitoso,name='PedidoConExito')
+    path("logrado/", cambiar_estado, name="cambiar_estado")
 ]

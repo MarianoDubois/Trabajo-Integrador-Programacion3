@@ -62,7 +62,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% static 'products.html' %}">Products</a>
+                        <a class="nav-link active" href="{% static 'estadoentrega.html' %}">estadoentrega</a>
                     </li>
 
 
@@ -86,46 +86,31 @@
             </div>
         </div>
     </header>
-    <form action="{% url 'saveProducto' %}" method="post">
+    <form action="{% url 'cambiar_estado' %}" method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label for="exampleFormControlInput1">Nombre Encargado</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
-        </div>
+            <label for="exampleFormControlSelect1">Elige la venta</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="venta">
 
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Elige el proveedor</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="proveedor">
-
-                {% for p in proveedores %}
-                    <option value="{{ p.cuit }}">{{ p.razon_social }}</option>
+                {% for p in ventas %}
+                    <option value="{{ p.id }}">{{p.id }}</option>
                 {% endfor %}
             </select>
-            <a href="http://127.0.0.1:8000/admin/confApp/proveedores/add/?_to_field=id&_popup=1"
-               class="btn custom-btn social-btn">
 
-
-                Generar nuevo proveedor
-            </a>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Elige el producto</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <label for="exampleFormControlSelect1">Elige el nuevo estado</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="estado">
 
-                    {% for p in productos %}
-                        <option>{{ p.nombre }}</option>
+                    {% for p in estados %}
+                        <option value="{{ p.id }}">{{ p.nombre }}</option>
                     {% endfor %}
 
                 </select>
 
             </div>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
         <button type="submit" class="btn btn-primary"
-                href="http://127.0.0.1:8000/admin/confApp/proveedores/add/?_to_field=id&_popup=1">Registrar
-            Pedido
+                href="http://127.0.0.1:8000/admin/confApp/proveedores/add/?_to_field=id&_popup=1">Cambiar estado
         </button>
 
 

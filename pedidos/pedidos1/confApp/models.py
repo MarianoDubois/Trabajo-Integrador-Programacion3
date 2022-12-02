@@ -127,13 +127,19 @@ class Ventas(models.Model):
     fecha_recibido = models.DateTimeField(blank=True, null=True)
     direccion_entrega = models.CharField(max_length=30, blank=True, null=True)
 
-    def stockFinder(self):
+    def stock_finder(self):
         if self.id_estado == 1:
             detalles = Detalles.objects.all().filter(id_venta=self.id)
             for detalle in detalles:
                 producto = detalle.id_producto
                 cantidad = detalle.cantidad
                 Productos.restock(producto, cantidad)
+
+    def set_estado(self, nuevo_estado):
+        venta = Ventas.objects.get(id=self.id)
+        venta.id_estado = nuevo_estado
+        venta.save()
+        self.stock_finder()
     
     def total(self):
         list_detalles = Detalles.objects.all().filter(id_venta=self.id)
