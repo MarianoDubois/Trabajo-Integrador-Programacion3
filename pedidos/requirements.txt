@@ -1,0 +1,8 @@
+asgiref==3.5.2
+cffi==1.15.1
+cryptography==38.0.4
+Django==4.1.2
+django-jazzmin==2.6.0
+pycparser==2.21
+PyMySQL==1.0.2
+sqlparse==0.4.3
