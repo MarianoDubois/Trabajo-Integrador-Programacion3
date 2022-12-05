@@ -15,8 +15,15 @@ sqlparse==0.4.3
 ```
 Estas deben ser instaladas para poder iniciar el proyecto
 ## Instalacion
+```bash
+Git Clone  https://github.com/MarianoDubois/Trabajo-Integrador-Programacion3
+```
 Lo primero que se debe hacer es clonar el proyecto desde este link https://github.com/MarianoDubois/Trabajo-Integrador-Programacion3
-Luego debemos iniciar un entorno virtual con pipenv shell luego instalamos los paquetes instalados en el requirements.txt con pip install -r requirements.txt
+## Iniciarmos entorno virtual
+Luego debemos iniciar un entorno virtual con pipenv shell 
+## Instalar dependencias
+instalamos los paquetes instalados en el requirements.txt con pip install -r requirements.txt
+## Iniciar el proyecto
 Una vez instalados los paquetes simplemente debemos iniciar el proyecto en un navegador que nos guste.
 ## Desarolladores:
 Mateo Sinches, Tadeo Funes, Mariano Dubois.
